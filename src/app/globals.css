@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -20,8 +21,79 @@ body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
-      transparent,
+      top,
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+.hero{
+  background: linear-gradient(to top,rgba(33, 33, 33, 0.422), rgba(33, 33, 33, 0.0)),url("../../public/herobg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.info{
+  background: url('https://static.wixstatic.com/media/c837a6_870aaf57c1d9484a9a6ee57f2465df75~mv2.jpg/v1/fill/w_980,h_880,al_r,q_85,usm_0.66_1.00_0.01,enc_auto/c837a6_870aaf57c1d9484a9a6ee57f2465df75~mv2.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.sub{
+  transition: color 1s ease-in-out;
+  animation: colorChange 1s infinite alternate;
+}
+
+@keyframes colorChange {
+  0%{
+    color: red;
+  }  
+  100%{
+    color: azure;
+  }
+}
+
+
+/* media */
+@media screen and (max-width: 998px){  
+  .secondsec{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+  }
+}
+@media screen and (min-width: 998px){  
+  .secondsec{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+/*  */
+@media screen and (max-width: 700px) {
+  .hero{
+    height: 100vh;
+  }
+  .herocontainer{
+    margin-top: 30px;
+  }
+  
+}
+
+/*  */
+::selection{
+  background: gray;
+  color: white;
+}
+
+::-webkit-scrollbar{
+  width: 10px;
+  background: gray;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: black;
+  border-radius: 10px;
+  cursor: pointer;
 }
